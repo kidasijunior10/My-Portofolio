@@ -106,7 +106,7 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Clean dark background like footer */}
       <div className="absolute inset-0 bg-dark" />
       

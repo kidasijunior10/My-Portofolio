@@ -65,7 +65,7 @@ export default function Footer() {
             className="text-center"
           >
             <p className="text-secondary font-inter text-sm">
-              © 2024 Linga Joachim Kidasi. All rights reserved.
+              © 2025 Linga Joachim Kidasi. All rights reserved.
             </p>
           </motion.div>
         </div>

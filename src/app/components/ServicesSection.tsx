@@ -22,7 +22,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-dark">
+    <section id="services" className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-dark">
       {/* Clean dark background */}
       <div className="absolute inset-0 bg-dark" />
       

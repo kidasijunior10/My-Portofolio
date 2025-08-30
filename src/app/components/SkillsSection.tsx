@@ -7,9 +7,8 @@ interface Skill {
   name: string;
   iconUrl: string;
   color: string;
+  useWhiteIcon?: boolean;
 }
-
-
 
 function SkillCard({ skill, index }: { skill: Skill; index: number }) {
   return (
@@ -45,7 +44,13 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
               width={48}
               height={48}
               unoptimized
-              className="filter brightness-0 invert group-hover:filter-none transition-all duration-300"
+              className={`transition-all duration-300 group-hover:scale-110 ${
+                skill.useWhiteIcon 
+                  ? 'filter brightness-0 invert group-hover:filter-none' 
+                  : skill.name.includes('Adobe') 
+                    ? 'filter-none' 
+                    : ''
+              }`}
             />
           </div>
         </div>
@@ -66,90 +71,113 @@ export default function SkillsSection() {
     // Frontend
     {
       name: "React",
-      iconUrl: "https://cdn.simpleicons.org/react/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/react",
       color: "#61DAFB"
     },
     {
       name: "React Native",
-      iconUrl: "https://cdn.simpleicons.org/react/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/react",
       color: "#61DAFB"
     },
     {
       name: "Next.js",
       iconUrl: "https://cdn.simpleicons.org/nextdotjs/ffffff",
-      color: "#000000"
+      color: "#000000",
+      useWhiteIcon: true
     },
     {
       name: "Tailwind CSS",
-      iconUrl: "https://cdn.simpleicons.org/tailwindcss/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/tailwindcss",
       color: "#06B6D4"
     },
     {
       name: "JavaScript",
-      iconUrl: "https://cdn.simpleicons.org/javascript/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/javascript",
       color: "#F7DF1E"
     },
     // Backend
     {
       name: "Java",
-      iconUrl: "https://cdn.simpleicons.org/java/ffffff",
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       color: "#ED8B00"
     },
     {
+      name: "C#",
+      iconUrl: "https://cdn.simpleicons.org/dotnet",
+      color: "#239120"
+    },
+    {
+      name: "C++",
+      iconUrl: "https://cdn.simpleicons.org/cplusplus",
+      color: "#00599C"
+    },
+    {
       name: "Spring Boot",
-      iconUrl: "https://cdn.simpleicons.org/springboot/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/springboot",
       color: "#6DB33F"
     },
     {
       name: "Node.js",
-      iconUrl: "https://cdn.simpleicons.org/nodedotjs/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/nodedotjs",
       color: "#339933"
     },
     {
       name: "Express.js",
       iconUrl: "https://cdn.simpleicons.org/express/ffffff",
-      color: "#000000"
+      color: "#000000",
+      useWhiteIcon: true
     },
     {
       name: "PHP",
-      iconUrl: "https://cdn.simpleicons.org/php/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/php",
       color: "#777BB4"
     },
     {
       name: "Laravel",
-      iconUrl: "https://cdn.simpleicons.org/laravel/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/laravel",
       color: "#FF2D20"
+    },
+    // Version Control
+    {
+      name: "Git",
+      iconUrl: "https://cdn.simpleicons.org/git",
+      color: "#F05032"
     },
     // Design Tools
     {
       name: "Figma",
-      iconUrl: "https://cdn.simpleicons.org/figma/ffffff",
+      iconUrl: "https://cdn.simpleicons.org/figma",
       color: "#F24E1E"
     },
     {
       name: "Adobe Photoshop",
-      iconUrl: "https://cdn.simpleicons.org/adobephotoshop/ffffff",
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
+      useWhiteIcon: true,
       color: "#31A8FF"
     },
     {
       name: "Adobe Illustrator",
-      iconUrl: "https://cdn.simpleicons.org/adobeillustrator/ffffff",
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg",
+      useWhiteIcon: true,
       color: "#FF9A00"
     },
     {
       name: "Adobe After Effects",
-      iconUrl: "https://cdn.simpleicons.org/adobeaftereffects/ffffff",
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-plain.svg",
+      useWhiteIcon: true,
       color: "#9999FF"
     },
     {
       name: "Adobe Premiere Pro",
-      iconUrl: "https://cdn.simpleicons.org/adobepremierepro/ffffff",
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-plain.svg",
+      useWhiteIcon: true,
       color: "#EA77FF"
     },
     {
       name: "DaVinci Resolve",
-      iconUrl: "https://cdn.simpleicons.org/davinciresolve/ffffff",
-      color: "#FF6B35"
+      iconUrl: "https://cdn.simpleicons.org/davinciresolve",
+      useWhiteIcon: true,
+      color: "#000000"
     }
   ];
 

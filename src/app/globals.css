@@ -15,3 +15,9 @@
 .no-clip {
   overflow: visible !important;
 }
+
+.active {
+  color: #F97316 !important; /* Your accent color */
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

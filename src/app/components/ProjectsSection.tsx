@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 // ProjectCard component
 interface ProjectCardProps {
@@ -18,13 +19,14 @@ function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, 
     <motion.div
       className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden hover:translate-y-[-5px] hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 group"
       initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
       transition={{ 
         duration: 0.6, 
-        delay: index * 0.2,
+        delay: index * 0.1,
         ease: "easeOut"
       }}
-      viewport={{ once: true, margin: "-100px" }}
+      layout
     >
       {/* Project Image */}
       <div className="h-64 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
@@ -94,8 +96,11 @@ function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, 
 
 // Main ProjectsSection component
 export default function ProjectsSection() {
+  const [activeTab, setActiveTab] = useState('app-dev');
+
   const projects = [
     {
+      category: 'app-dev',
       title: "E-Commerce Platform",
       description: "A modern full-stack e-commerce solution featuring seamless user authentication, secure payment processing, and an intuitive admin dashboard. Built with performance and scalability in mind.",
       technologies: ["React", "Next.js", "Stripe", "MongoDB", "Tailwind CSS"],
@@ -103,6 +108,7 @@ export default function ProjectsSection() {
       caseStudyUrl: "#",
     },
     {
+      category: 'app-dev',
       title: "Portfolio Website",
       description: "A stunning, responsive portfolio website showcasing creative work and professional skills. Features smooth animations, SEO optimization, and exceptional user experience across all devices.",
       technologies: ["React", "Next.js", "Framer Motion", "TypeScript", "Tailwind CSS"],
@@ -110,16 +116,75 @@ export default function ProjectsSection() {
       caseStudyUrl: "#",
     },
     {
+      category: 'app-dev',
       title: "Task Management App",
       description: "A collaborative task management application with real-time updates, intuitive drag-and-drop functionality, and comprehensive team collaboration features. Includes advanced user roles and permissions.",
       technologies: ["React", "Node.js", "Socket.io", "PostgreSQL", "Express"],
       liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
+    {
+      category: 'video-motion',
+      title: "Census Promotion Video",
+      description: "An engaging promotional video for the national census campaign, featuring dynamic motion graphics, compelling storytelling, and clear call-to-action elements to encourage participation.",
+      technologies: ["DaVinci Resolve", "Adobe Premiere Pro", "After Effects", "Motion Graphics"],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'video-motion',
+      title: "Logo Animation for TikMoney",
+      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'graphics',
+      title: "UNFPA Infographics",
+      description: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+      technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'graphics',
+      title: "Brand Identity Package",
+      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'logo-design',
+      title: "TikMoney",
+      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'logo-design',
+      title: "Ikawa Burundian Coffee",
+      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+  ];
+
+  // Filter projects based on active tab
+  const filteredProjects = projects.filter(project => project.category === activeTab);
+
+  const tabs = [
+    { id: 'app-dev', label: 'App Development' },
+    { id: 'video-motion', label: 'Video & Motion Design' },
+    { id: 'graphics', label: 'Graphics & Infographics' },
+    { id: 'logo-design', label: 'Logo Design' },
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Clean dark background like footer */}
       <div className="absolute inset-0 bg-dark" />
       
@@ -144,20 +209,72 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              index={index}
-              title={project.title}
-              description={project.description}
-              technologies={project.technologies}
-              liveDemoUrl={project.liveDemoUrl}
-              caseStudyUrl={project.caseStudyUrl}
-            />
+        {/* Tab Buttons */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-4 mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {tabs.map((tab) => (
+            <motion.button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 ${
+                activeTab === tab.id
+                  ? 'bg-accent text-white shadow-lg shadow-accent/25'
+                  : 'bg-transparent text-primary border-2 border-accent hover:bg-accent/10'
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {tab.label}
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={activeTab}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {filteredProjects.map((project, index) => (
+              <ProjectCard
+                key={`${activeTab}-${index}`}
+                index={index}
+                title={project.title}
+                description={project.description}
+                technologies={project.technologies}
+                liveDemoUrl={project.liveDemoUrl}
+                caseStudyUrl={project.caseStudyUrl}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* No projects message */}
+        {filteredProjects.length === 0 && (
+          <motion.div
+            className="text-center py-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-accent/40 text-6xl mb-4">📁</div>
+            <h3 className="text-2xl font-sora font-bold text-primary mb-2">
+              No projects in this category yet
+            </h3>
+            <p className="text-secondary font-inter">
+              Check back soon for new projects in this category!
+            </p>
+          </motion.div>
+        )}
       </div>
     </section>
   );

@@ -12,43 +12,43 @@ interface FloatingBadgeProps {
   isHighlighted?: boolean;
 }
 
-function FloatingBadge({ text, delay, position, isHighlighted = false }: FloatingBadgeProps) {
-  return (
-    <motion.div
-      className={`absolute backdrop-blur-sm px-4 py-2 rounded-full text-sm font-inter border shadow-lg ${
-        isHighlighted 
-          ? 'bg-accent text-white border-accent' 
-          : 'bg-gray-800 text-primary border-gray-700'
-      }`}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ 
-        opacity: 1, 
-        scale: 1,
-        y: [0, -10, 0],
-      }}
-      transition={{
-        opacity: { delay: delay + 0.5, duration: 0.5 },
-        scale: { delay: delay + 0.5, duration: 0.3 },
-        y: {
-          delay: delay + 1,
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut"
+        function FloatingBadge({ text, delay, position, isHighlighted = false }: FloatingBadgeProps) {
+          return (
+            <motion.div
+              className={`absolute backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-inter border shadow-lg ${
+                isHighlighted
+                  ? 'bg-accent text-white border-accent'
+                  : 'bg-gray-800 text-primary border-gray-700'
+              }`}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: [0, -10, 0],
+              }}
+              transition={{
+                opacity: { delay: delay + 0.5, duration: 0.5 },
+                scale: { delay: delay + 0.5, duration: 0.3 },
+                y: {
+                  delay: delay + 1,
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
+              }}
+              style={{
+                left: `${position.x}%`,
+                top: `${position.y}%`,
+              }}
+            >
+              {text}
+            </motion.div>
+          );
         }
-      }}
-      style={{
-        left: `${position.x}%`,
-        top: `${position.y}%`,
-      }}
-    >
-      {text}
-    </motion.div>
-  );
-}
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative py-8 sm:py-12 lg:py-20 no-clip">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative py-8 sm:py-12 lg:py-20 no-clip -mt-25">
       {/* Clean dark background like footer */}
       <div className="absolute inset-0 bg-dark" />
       
@@ -160,8 +160,8 @@ export default function HeroSection() {
                 }}
               >
                 <div className="z-1000">
-                    {/* Floating Badges - Hidden on mobile, visible on larger screens */}
-                    <div className="hidden sm:block">
+                    {/* Floating Badges - Visible on all screens */}
+                    <div className="block">
                       <FloatingBadge 
                         text="Web App" 
                         delay={1.0} 

@@ -9,7 +9,20 @@ export default function SkillsMarquee() {
     "Motion Design",
     "Laravel",
     "React",
-    "Next.js"
+    "Next.js",
+    "Tailwind CSS",
+    "JavaScript",
+    "Java",
+    "Spring Boot",
+    "Node.js",
+    "Express.js",
+    "PHP",
+    "Figma",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+    "Adobe After Effects",
+    "Adobe Premiere Pro",
+    "DaVinci Resolve"
   ];
 
   return (
