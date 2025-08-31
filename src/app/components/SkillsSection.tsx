@@ -24,7 +24,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
       className="group"
     >
       <motion.div
-        className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-accent/50 hover:bg-gray-900/80 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-accent/10"
+        className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-3 sm:p-4 lg:p-6 hover:border-accent/50 hover:bg-gray-900/80 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-accent/10"
         whileHover={{ 
           y: -8,
           scale: 1.05,
@@ -32,7 +32,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
         }}
       >
         {/* Skill Icon with Background */}
-        <div className="relative w-16 h-16 mx-auto mb-4">
+        <div className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mx-auto mb-3 sm:mb-4">
           <div 
             className="absolute inset-0 rounded-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"
             style={{ backgroundColor: skill.color }}
@@ -44,7 +44,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
               width={48}
               height={48}
               unoptimized
-              className={`transition-all duration-300 group-hover:scale-110 ${
+              className={`transition-all duration-300 group-hover:scale-110 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 ${
                 skill.useWhiteIcon 
                   ? 'filter brightness-0 invert group-hover:filter-none' 
                   : skill.name.includes('Adobe') 
@@ -57,7 +57,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
         
         {/* Skill Name */}
         <div className="text-center">
-          <span className="text-primary font-inter font-medium text-sm group-hover:text-accent transition-colors duration-300">
+          <span className="text-primary font-inter font-medium text-xs sm:text-sm group-hover:text-accent transition-colors duration-300">
             {skill.name}
           </span>
         </div>
@@ -182,33 +182,33 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Clean dark background like footer */}
       <div className="absolute inset-0 bg-dark" />
       
       {/* Ultra-subtle accent glow */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/2 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/1 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-accent/2 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-accent/1 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Title */}
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-sora font-bold text-primary mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold text-primary mb-4 sm:mb-6">
             My Tech Stack & Tools
           </h2>
-          <p className="text-secondary font-inter text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-secondary font-inter text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed px-4">
             A comprehensive collection of technologies and tools I use to bring ideas to life.
           </p>
         </motion.div>
 
         {/* Unified Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
           {allSkills.map((skill, index) => (
             <SkillCard key={skill.name} skill={skill} index={index} />
           ))}

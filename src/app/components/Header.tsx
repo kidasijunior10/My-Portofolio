@@ -52,17 +52,6 @@ export default function Header() {
                 Services
               </ScrollLink>
               <ScrollLink
-                to="experience"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                activeClass="active"
-                className="text-primary hover:text-accent transition-colors font-inter cursor-pointer text-sm"
-              >
-                Experience
-              </ScrollLink>
-              <ScrollLink
                 to="projects"
                 spy={true}
                 smooth={true}
@@ -72,6 +61,17 @@ export default function Header() {
                 className="text-primary hover:text-accent transition-colors font-inter cursor-pointer text-sm"
               >
                 Projects
+              </ScrollLink>
+              <ScrollLink
+                to="experience"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                activeClass="active"
+                className="text-primary hover:text-accent transition-colors font-inter cursor-pointer text-sm"
+              >
+                Experience
               </ScrollLink>
             </nav>
 

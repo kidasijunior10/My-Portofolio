@@ -4,25 +4,20 @@ import Marquee from 'react-fast-marquee';
 
 export default function SkillsMarquee() {
   const skills = [
-    "Software Development",
-    "UI/UX Design", 
-    "Motion Design",
     "Laravel",
     "React",
     "Next.js",
     "Tailwind CSS",
-    "JavaScript",
-    "Java",
-    "Spring Boot",
-    "Node.js",
-    "Express.js",
+    "Bootstrap",
     "PHP",
-    "Figma",
+    "JavaScript",
+    "Node.js",
     "Adobe Photoshop",
     "Adobe Illustrator",
     "Adobe After Effects",
     "Adobe Premiere Pro",
-    "DaVinci Resolve"
+    "Adobe InDesign",
+    "DaVinci Resolve",
   ];
 
   return (

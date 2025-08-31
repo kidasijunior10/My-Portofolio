@@ -59,7 +59,7 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto w-full relative z-10 px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
           {/* Left side - Text content */}
-          <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
+          <div className="flex-1 text-center lg:text-left order-1 lg:-mt-25 sm:mt-20">
             {/* Orange line */}
             <motion.div 
               className="w-12 h-1 sm:w-16 bg-accent mb-4 mx-auto lg:mx-0"
@@ -127,9 +127,9 @@ export default function HeroSection() {
           </div>
 
           {/* Right side - Portrait with background circle */}
-          <div className="flex-1 flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0">
+          <div className="flex-1 flex justify-center lg:justify-end order-2 mb-8 lg:mb-0">
             {/* Main positioning canvas - relative div */}
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px]">
+            <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px]">
               
               {/* Background circle - simple circular div */}
               <motion.div 
@@ -145,7 +145,7 @@ export default function HeroSection() {
               
                             {/* Portrait image - absolute positioned above circle */}
               <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] z-10"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-88 sm:h-88 md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] z-10"
                 initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ 
@@ -163,37 +163,37 @@ export default function HeroSection() {
                     {/* Floating Badges - Visible on all screens */}
                     <div className="block">
                       <FloatingBadge 
-                        text="Web App" 
+                        text="Creative Developer" 
                         delay={1.0} 
-                        position={{ x: -30, y: 10 }}
+                        position={{ x: 0, y: 30 }}
                         isHighlighted={true}
                       />
                       <FloatingBadge 
-                        text="Video Editor" 
+                        text="Multimedia Designer" 
                         delay={1.0} 
                         position={{ x: 5, y: 70 }}
                         isHighlighted={true}
                       />
                       <FloatingBadge 
-                        text="Motion Design" 
+                        text="Graphic design" 
                         delay={1.2} 
                         position={{ x: 70, y: 20 }}
                       />
                       <FloatingBadge 
-                        text="UI/UX" 
+                        text="Developer" 
                         delay={1.4} 
-                        position={{ x: 20, y: 40 }}
+                        position={{ x: 40, y: 50 }}
                         isHighlighted={true}
                       />
                       <FloatingBadge 
-                        text="Dashboard" 
+                        text="Web app" 
                         delay={1.6} 
-                        position={{ x: 80, y: 60 }}
+                        position={{ x: 80, y: 65 }}
                       />
                       <FloatingBadge 
                         text="Mobile App" 
                         delay={1.8} 
-                        position={{ x: -20, y: 80 }}
+                        position={{ x: 0, y: 80 }}
                       />
                     </div>
                   </div>
@@ -213,9 +213,15 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Scroll Indicator - Bottom Middle */}
-      <motion.div
-        className="absolute bottom-8 sm:bottom-12 lg:bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+ 
+
+      {/* Skills Marquee within Hero Section */}
+      <div className="absolute lg:bottom-27 xl:bottom-27 bottom-2 sm:bottom-4 left-0 right-0 z-10">
+        <SkillsMarquee />
+      </div>
+           {/* Scroll Indicator - Bottom Middle */}
+           <motion.div
+        className="absolute bottom-5 sm:bottom-12 lg:bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -251,11 +257,6 @@ export default function HeroSection() {
           />
         </motion.svg>
       </motion.div>
-
-      {/* Skills Marquee within Hero Section */}
-      <div className="absolute bottom-2 sm:bottom-4 left-0 right-0 z-10">
-        <SkillsMarquee />
-      </div>
     </section>
   );
 }

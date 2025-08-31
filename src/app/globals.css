@@ -21,3 +21,21 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+/* Custom Scrollbar Styling */
+
+/* This styles the whole scrollbar area */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* This styles the background track of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #111827; /* Your main dark background color */
+}
+
+/* This styles the draggable handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #F97316; /* Your orange accent color */
+  border-radius: 20px;
+  border: 3px solid #111827; /* Creates a nice padding effect */
+}
