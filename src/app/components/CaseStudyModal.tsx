@@ -20,6 +20,9 @@ interface Project {
   caseStudy?: {
     overview: string;
     screenshots: string[];
+    challenge?: string;
+    solution?: string;
+    outcome?: string;
   };
 }
 
@@ -121,15 +124,51 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
                           </div>
                         </div>
                       ) : null}
+
+                      {/* The Challenge */}
+                      {project.caseStudy?.challenge && (
+                        <div className="mb-8">
+                          <h3 className="text-xl font-sora font-semibold text-primary mb-4">
+                            The Challenge
+                          </h3>
+                          <p className="text-secondary font-inter leading-relaxed text-base">
+                            {project.caseStudy.challenge}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* My Solution */}
+                      {project.caseStudy?.solution && (
+                        <div className="mb-8">
+                          <h3 className="text-xl font-sora font-semibold text-primary mb-4">
+                            My Solution
+                          </h3>
+                          <p className="text-secondary font-inter leading-relaxed text-base">
+                            {project.caseStudy.solution}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* The Outcome */}
+                      {project.caseStudy?.outcome && (
+                        <div className="mb-8">
+                          <h3 className="text-xl font-sora font-semibold text-primary mb-4">
+                            The Outcome
+                          </h3>
+                          <p className="text-secondary font-inter leading-relaxed text-base">
+                            {project.caseStudy.outcome}
+                          </p>
+                        </div>
+                      )}
                     </>
                   )}
 
                   {/* Key Features */}
                   {project.features && project.features.length > 0 && (
                     <div className="mb-8">
-                      <h4 className="text-xl font-sora font-semibold text-primary mb-4">
+                      <h3 className="text-xl font-sora font-semibold text-primary mb-4">
                         Key Features
-                      </h4>
+                      </h3>
                       <ul className="space-y-2">
                         {project.features.map((feature, index) => (
                           <li key={index} className="flex items-start gap-3">

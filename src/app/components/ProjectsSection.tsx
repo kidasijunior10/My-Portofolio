@@ -115,74 +115,95 @@ export default function ProjectsSection() {
   const projects = [
     {
       category: 'app-dev',
-      title: "E-Commerce Platform",
-      description: "A modern full-stack e-commerce solution featuring seamless user authentication, secure payment processing, and an intuitive admin dashboard. Built with performance and scalability in mind.",
-      technologies: ["React", "Next.js", "Stripe", "MongoDB", "Tailwind CSS"],
-      imageUrl: "/images/ecommerce-preview.jpg",
+      title: "Logistics Management System",
+      description: "The i-Logistics system is a custom web application that replaces manual spreadsheets for a cross-border fuel transport company. It intelligently manages both the company's own trucks and subcontracted jobs, providing a command center for the internal team and a self-service tracking portal for its clients.",
+      technologies: ["Laravel", "PHP", "MySql", "Livewire","Alpine Js","Javascript", "Tailwind CSS"],
+      imageUrl: "/images/Dashboard_logi.png",
       caseStudy: {
-        overview: "A modern full-stack e-commerce solution featuring seamless user authentication, secure payment processing, and an intuitive admin dashboard. Built with performance and scalability in mind.",
+        overview: "The i-Logistics system is a custom web application that replaces manual spreadsheets for a cross-border fuel transport company. It intelligently manages both the company's own trucks and subcontracted jobs, providing a command center for the internal team and a self-service tracking portal for its clients.",
         screenshots: [
-          "/images/ecommerce-screenshot-1.png",
-          "/images/ecommerce-screenshot-2.png",
-          "/images/ecommerce-screenshot-3.png"
-        ]
+          "/images/client.png",
+          "/images/shipment.png",
+          "/images/shipment details.png",
+          "/images/transporter.png"
+        ],
+        challenge: "My client, a specialized logistics company, was managing a complex and high-stakes cross-border fuel transport operation using a collection of manual tools, primarily spreadsheets. This disconnected process created significant challenges: it was slow, prone to costly data entry errors in profitability calculations, and offered no real-time visibility for either the internal team or their clients. The added complexity of managing both their own fleet and external subcontractors made it nearly impossible to get a clear, accurate picture of their day-to-day operations and financial health.",
+        solution: "I developed i-Logistics, a bespoke, end-to-end web application that digitizes and streamlines their entire operational workflow. The solution provides a centralized command center for the administrative team and a professional self-service portal for their clients. I engineered the system's core logic to intelligently handle their dual operational model (Own Fleet vs. Subcontracted), with dynamic interfaces that adapt to each specific job. Key features include an automated quote-to-shipment wizard, real-time expense tracking, precise loss calculation (Allowable vs. Disallowable), and a dedicated reporting engine.",
+        outcome: "The i-Logistics platform has successfully transformed the company's operations, replacing data fragmentation with a single source of truth. The automated financial calculations have eliminated critical errors and now provide precise, real-time insights into the profitability of every shipment. The client portal has significantly enhanced customer satisfaction by offering unprecedented transparency with live tracking and document access. Overall, the system has increased operational efficiency, reduced financial risks, and provided the business with a robust and scalable platform for sustainable growth."
       },
       features: [
-        "Secure payment processing with Stripe integration",
-        "Real-time inventory management system",
-        "Advanced admin dashboard with analytics"
+        "Intelligent Quote-to-Shipment Workflow",
+        "Dual Operational Model Management",
+        "Comprehensive Shipment Tracking & Management",
+        "Modern User Experience (UX/UI)",
+        "Robust Reporting System",
+
       ],
       liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
     {
       category: 'app-dev',
-      title: "Portfolio Website",
-      description: "A stunning, responsive portfolio website showcasing creative work and professional skills. Features smooth animations, SEO optimization, and exceptional user experience across all devices.",
-      technologies: ["React", "Next.js", "Framer Motion", "TypeScript", "Tailwind CSS"],
-      imageUrl: "/images/portfolio-preview.jpg",
+      title: "Electronic Billing Management System(EBMS)",
+      description: "I developed and maintained custom software that connected client POS and billing systems to the Burundi Revenue Authority (OBR). As a key part of Burundi's national digitalization, this integration solution automated tax reporting and ensured real-time fiscal compliance for businesses in the retail, hospitality, and service sectors.",
+      technologies: ["Laravel", "PHP", "MySql", "JavaScript", "Tailwind CSS","API"],
+      imageUrl: "/images/Ebms2.png",
       caseStudy: {
-        overview: "A stunning, responsive portfolio website showcasing creative work and professional skills. Features smooth animations, SEO optimization, and exceptional user experience across all devices.",
+        overview: "The Electronic Billing Management System (EBMS) is a comprehensive software solution designed to streamline and automate the process of reporting and managing electronic billing data for businesses in the retail, hospitality, and service sectors. It ensures real-time synchronization of POS data with the Burundi Revenue Authority (OBR) to facilitate accurate and timely tax compliance.",
         screenshots: [
-          "/images/portfolio-screenshot-1.png",
-          "/images/portfolio-screenshot-2.png"
-        ]
+          "/images/Ebms1.png",
+          "/images/Ebms2.png",
+          "/images/Ebms3.png",
+          "/images/Ebms4.png",
+          "/images/Ebms5.png",
+          "/images/Ebms6.png",
+          "/images/Ebms7.png",
+        
+        ],
+        challenge: "As part of a national digitalization effort, the Burundi Revenue Authority (OBR) required all businesses to report their sales in real-time. My client, i-Solutions, needed to provide its diverse enterprise customers with a reliable and seamless way to comply with this new fiscal regulation without disrupting their daily operations.",
+        solution: "I developed and maintained the client-side software that integrates directly with various business systems. The solution connects their existing Point of Sale (POS) and invoicing software to the OBR's central EBMS platform. I focused on creating a robust and adaptable system that could be deployed across different sectors, from retail shops to hotels, ensuring secure and automated data synchronization.",
+        outcome: "The integration was a success, enabling numerous businesses to comply with the new tax laws effortlessly. The automated system significantly reduced the risk of manual data entry errors, increased the transparency of sales reporting, and provided clients with peace of mind, knowing their operations were fully compliant with national regulations."
       },
       features: [
-        "Smooth scroll animations and transitions",
-        "Mobile-first responsive design",
-        "SEO optimized with meta tags and structured data"
+        "Real-Time Data Synchronization",
+        "Multi-Sector Compatibility",
+        "POS (Point of Sale) Integration",
+        "Automated Tax Reporting",
+        "Secure Data Transmission",
+        "Ongoing Maintenance & Support",
       ],
       liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
     {
       category: 'app-dev',
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, intuitive drag-and-drop functionality, and comprehensive team collaboration features. Includes advanced user roles and permissions.",
-      technologies: ["React", "Node.js", "Socket.io", "PostgreSQL", "Express"],
-      imageUrl: "/images/taskapp-preview.jpg",
+      title: "Online Restaurant Menu",
+      description: "I developed a dynamic digital menu platform for Arena Restaurant Lounge Bar and Zanzi Restaurant to replace their traditional physical menus. The application provides customers with an easy-to-view, interactive menu on their personal devices and gives restaurant management a simple, real-time tool to control their offerings.",
+      technologies: ["Laravel", "PHP", "MySql", "Tailwind Css", "Breeze"],
+      imageUrl: "/images/menu.png",
       caseStudy: {
-        overview: "A collaborative task management application with real-time updates, intuitive drag-and-drop functionality, and comprehensive team collaboration features. Includes advanced user roles and permissions.",
+        overview: "I developed a dynamic digital menu platform for Arena Restaurant Lounge Bar and Zanzi Restaurant to replace their traditional physical menus. The application provides customers with an easy-to-view, interactive menu on their personal devices and gives restaurant management a simple, real-time tool to control their offerings.",
         screenshots: [
-          "/images/taskapp-screenshot-1.png",
-          "/images/taskapp-screenshot-2.png",
-          "/images/taskapp-screenshot-3.png"
-        ]
+          "/images/menu1.png",
+          "/images/menu3.png"
+        ],
+        challenge: "Traditional physical menus were becoming outdated and inefficient for modern restaurants. Arena Restaurant Lounge Bar and Zanzi Restaurant needed a solution that would allow them to easily update their menu offerings, prices, and availability without the cost and hassle of printing new physical menus. They also wanted to provide customers with a better, more interactive dining experience.",
+        solution: "I created a responsive web application using Laravel and Tailwind CSS that serves as a digital menu platform. The system includes an admin panel where restaurant management can easily update menu items, prices, and availability in real-time. The customer-facing interface is optimized for mobile devices and provides an intuitive, interactive menu experience with smooth animations and modern design.",
+        outcome: "The digital menu system has successfully replaced traditional physical menus for both restaurants. Management can now update their offerings instantly without printing costs, and customers enjoy a modern, interactive menu experience. The system is live and actively used at https://menu.zanzi.bi/ and https://menu.arena.bi/, demonstrating the practical value and user adoption of the solution."
       },
       features: [
-        "Real-time collaboration with Socket.io",
-        "Drag-and-drop task management",
-        "Role-based access control system"
+        "Interactive Digital Menu",
+        "Admin Control Panel",
+        "Responsive Design"
       ],
-      liveDemoUrl: "#",
+      liveDemoUrl: "https://menu.zanzi.bi/",
       caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
       title: "Census Promotion Video",
       description: "An engaging promotional video for the national census campaign, featuring dynamic motion graphics, compelling storytelling, and clear call-to-action elements to encourage participation.",
-      technologies: ["DaVinci Resolve", "Adobe Premiere Pro", "After Effects", "Motion Graphics"],
+      technologies: ["DaVinci Resolve", "Adobe Premiere Pro", "After Effects", "Animation"],
       youtubeVideoId: "AAAA",
       imageUrl: "/images/Video_processus.png",
       features: [
@@ -196,7 +217,7 @@ export default function ProjectsSection() {
       category: 'video-motion',
       title: "Field Report",
       description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
-      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      technologies: ["After Effects", "Adobe Premiere Pro", "DaVinci Resolve", "Motion Graphics", "Animation"],
       imageUrl: "/images/atelier-rep.png",
 
       features: [
@@ -204,14 +225,14 @@ export default function ProjectsSection() {
         "Professional visual effects",
         "Trust-building animation elements"
       ],
-      liveDemoUrl: "#",
+      liveDemoUrl: "https://youtu.be/4DiCgtsifEc",
       caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
       title: "Data Visualization: Census Motion Graphics",
       description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
-      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      technologies: ["After Effects", "Adobe Premiere Pro", "DaVinci Resolve", "Motion Graphics", "Animation"],
       imageUrl: "/images/video-motion.png",
 
       features: [
@@ -219,14 +240,14 @@ export default function ProjectsSection() {
         "Professional visual effects",
         "Trust-building animation elements"
       ],
-      liveDemoUrl: "#",
+      liveDemoUrl: "https://youtu.be/zoFThRUqVZQ",
       caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
       title: "The importance of the census",
       description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
-      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Animation"],
       imageUrl: "/images/motion-design1.png",
 
       features: [
@@ -234,14 +255,14 @@ export default function ProjectsSection() {
         "Professional visual effects",
         "Trust-building animation elements"
       ],
-      liveDemoUrl: "#",
+      liveDemoUrl: "https://youtu.be/t7OwS2oe9zE",
       caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
       title: "Are you registered?",
       description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
-      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Animation"],
       imageUrl: "/images/motion-design2.png",
 
       features: [
@@ -249,7 +270,7 @@ export default function ProjectsSection() {
         "Professional visual effects",
         "Trust-building animation elements"
       ],
-      liveDemoUrl: "#",
+      liveDemoUrl: "https://youtu.be/mwBNMBNg9gs",
       caseStudyUrl: "#",
     },
     {
@@ -396,6 +417,60 @@ export default function ProjectsSection() {
       liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
+    {
+      category: 'website',
+      title: "Hauge Family Microfinance Website",
+      description: "I developed the official website for Hauge Family Microfinance, creating a professional and trustworthy digital presence for the financial institution. The site is designed to clearly present their services, build client confidence, and provide essential information to current and prospective customers.",
+      technologies: ["Wordpress", "PHP", "Html/Css", "Javascript","Elementor"],
+      imageUrl: "/images/hfm.png",
+      screenshotUrls: [
+        "/images/ikawa-coffee-1.png",
+        "/images/ikawa-coffee-2.png"
+      ],
+      features: [
+        "Authentic coffee brand identity",
+        "Cultural design elements",
+        "Premium packaging design"
+      ],
+      liveDemoUrl: "https://hfm.bi/",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'website',
+      title: "Bureau Central du Recensement",
+      description: "During my role at the UNFPA, I was responsible for the design and development of the official website for the Bureau Central du Recensement. The primary objective was to create a central, accessible, and authoritative source of information for the national census, providing the public with key updates, official documents, and resources.",
+      technologies: ["Wordpress", "PHP", "Html/Css", "Javascript","Elementor"],
+      imageUrl: "/images/bcr.png",
+      screenshotUrls: [
+        "/images/ikawa-coffee-1.png",
+        "/images/ikawa-coffee-2.png"
+      ],
+      features: [
+        "Authentic coffee brand identity",
+        "Cultural design elements",
+        "Premium packaging design"
+      ],
+      liveDemoUrl: "https://bcr.bi/",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'website',
+      title: "Akilixo",
+      description: "I created the corporate website for Akilixo, a firm specializing in enterprise performance and planning. The goal was to build a modern and professional website that clearly communicates their strategic services to business leaders and serves as a primary point of contact for potential corporate clients.",
+      technologies: ["Wordpress", "PHP", "Html/Css", "Javascript","Elementor"],
+      imageUrl: "/images/akilixo.png",
+      screenshotUrls: [
+        "/images/ikawa-coffee-1.png",
+        "/images/ikawa-coffee-2.png"
+      ],
+      features: [
+        "Authentic coffee brand identity",
+        "Cultural design elements",
+        "Premium packaging design"
+      ],
+      liveDemoUrl: "https://akilixo.com/",
+      caseStudyUrl: "#",
+    },
   ];
 
   // Filter projects based on active tab
@@ -403,6 +478,7 @@ export default function ProjectsSection() {
 
   const tabs = [
     { id: 'app-dev', label: 'App Development' },
+    { id: 'website', label: 'Website' },
     { id: 'video-motion', label: 'Video & Motion Design' },
     { id: 'graphics', label: 'Graphics & Infographics' },
     { id: 'logo-design', label: 'Logo Design' },

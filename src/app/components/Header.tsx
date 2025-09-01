@@ -73,6 +73,17 @@ export default function Header() {
               >
                 Experience
               </ScrollLink>
+              <ScrollLink
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                activeClass="active"
+                className="text-primary hover:text-accent transition-colors font-inter cursor-pointer text-sm"
+              >
+                About
+              </ScrollLink>
             </nav>
 
             {/* Contact Button - Hidden on mobile */}
@@ -128,6 +139,18 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
+                </ScrollLink>
+                <ScrollLink 
+                  to="about" 
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  activeClass="active"
+                  className="block text-primary hover:text-accent transition-colors font-inter py-2 cursor-pointer"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
                 </ScrollLink>
                 <ScrollLink 
                   to="services" 

@@ -1,3 +1,4 @@
+import AboutMe from './components/AboutMe';
 import ContactSection from './components/ContactSection';
 import ExperienceSection from './components/ExperienceSection';
 import Footer from './components/Footer';
@@ -14,6 +15,7 @@ export default function Home() {
       <ProjectsSection />
       <ExperienceSection />
       <SkillsSection />
+      <AboutMe />
       <ContactSection />
       <Footer />
     </main>
