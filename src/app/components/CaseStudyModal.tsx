@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Fragment } from 'react';
+import YouTube from 'react-youtube';
 
 interface Project {
   title: string;
@@ -15,6 +16,11 @@ interface Project {
   category: string;
   screenshotUrls?: string[];
   features?: string[];
+  youtubeVideoId?: string;
+  caseStudy?: {
+    overview: string;
+    screenshots: string[];
+  };
 }
 
 interface CaseStudyModalProps {
@@ -70,29 +76,53 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
 
                 {/* Content */}
                 <div className="p-6 max-h-[80vh] overflow-y-auto">
-                  {/* Project Image */}
-                  {project.imageUrl && (
+                  {/* Video or Case Study Content */}
+                  {project.youtubeVideoId ? (
                     <div className="mb-8">
-                      <div className="relative w-full h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden">
-                        <Image
-                          src={project.imageUrl}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                        />
+                      <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-700 bg-black">
+                        <YouTube videoId={project.youtubeVideoId} opts={{ width: '100%', height: '100%' }} iframeClassName="w-full h-full" />
                       </div>
                     </div>
-                  )}
+                  ) : (
+                    <>
+                      {/* Project Description / Overview */}
+                      <div className="mb-8">
+                        <h4 className="text-xl font-sora font-semibold text-primary mb-4">
+                          Project Overview
+                        </h4>
+                        <p className="text-secondary font-inter leading-relaxed text-base">
+                          {project.caseStudy?.overview ?? project.description}
+                        </p>
+                      </div>
 
-                  {/* Project Description */}
-                  <div className="mb-8">
-                    <h4 className="text-xl font-sora font-semibold text-primary mb-4">
-                      Project Overview
-                    </h4>
-                    <p className="text-secondary font-inter leading-relaxed text-base">
-                      {project.description}
-                    </p>
-                  </div>
+                      {/* Visual Showcase */}
+                      {(project.caseStudy?.screenshots?.length || project.screenshotUrls?.length) ? (
+                        <div className="mb-8">
+                          <h4 className="text-xl font-sora font-semibold text-primary mb-4">
+                            Visual Showcase
+                          </h4>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {(project.caseStudy?.screenshots ?? project.screenshotUrls ?? []).map((screenshot, index) => (
+                              <motion.div
+                                key={index}
+                                className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border border-gray-700"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                              >
+                                <Image
+                                  src={screenshot}
+                                  alt={`${project.title} screenshot ${index + 1}`}
+                                  fill
+                                  className="object-cover hover:scale-105 transition-transform duration-300"
+                                />
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : null}
+                    </>
+                  )}
 
                   {/* Key Features */}
                   {project.features && project.features.length > 0 && (
@@ -111,32 +141,6 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
                     </div>
                   )}
 
-                  {/* Visual Showcase */}
-                  {project.screenshotUrls && project.screenshotUrls.length > 0 && (
-                    <div className="mb-8">
-                      <h4 className="text-xl font-sora font-semibold text-primary mb-4">
-                        Visual Showcase
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {project.screenshotUrls.map((screenshot, index) => (
-                          <motion.div
-                            key={index}
-                            className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border border-gray-700"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                          >
-                            <Image
-                              src={screenshot}
-                              alt={`${project.title} screenshot ${index + 1}`}
-                              fill
-                              className="object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
 
                   {/* Technologies Used */}
                   <div className="mb-8">

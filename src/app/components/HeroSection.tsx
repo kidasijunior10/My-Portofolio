@@ -80,7 +80,7 @@ export default function HeroSection() {
               }}
             >
               Hello There! I'm{' '}
-              <span className="text-accent">Linga Joachim Kidasi</span>
+              <span className="text-accent">Joachim Kidasi</span>
             </motion.h1>
             
             {/* Subtitle with animation */}
@@ -193,7 +193,7 @@ export default function HeroSection() {
                       <FloatingBadge 
                         text="Mobile App" 
                         delay={1.8} 
-                        position={{ x: 0, y: 80 }}
+                        position={{ x: 50, y: 80 }}
                       />
                     </div>
                   </div>

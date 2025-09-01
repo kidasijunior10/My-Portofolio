@@ -14,10 +14,11 @@ interface ProjectCardProps {
   caseStudyUrl?: string;
   index: number;
   category: string;
+  hasCaseStudy?: boolean;
   onCaseStudyClick: () => void;
 }
 
-function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, caseStudyUrl, index, category, onCaseStudyClick }: ProjectCardProps) {
+function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, caseStudyUrl, index, category, hasCaseStudy, onCaseStudyClick }: ProjectCardProps) {
   return (
     <motion.div
       className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden hover:translate-y-[-5px] hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 group"
@@ -77,21 +78,28 @@ function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, 
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-          <motion.button
-            className="bg-accent text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent/90 transition-colors duration-300 flex-1 text-xs sm:text-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Live Demo
-          </motion.button>
-          <motion.button
-            onClick={onCaseStudyClick}
-            className="border border-accent text-accent px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent hover:text-white transition-all duration-300 flex-1 text-xs sm:text-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Case Study
-          </motion.button>
+          {liveDemoUrl && (
+            <motion.a
+              href={liveDemoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-accent text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent/90 transition-colors duration-300 flex-1 text-xs sm:text-sm text-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Live Demo
+            </motion.a>
+          )}
+          {hasCaseStudy && (
+            <motion.button
+              onClick={onCaseStudyClick}
+              className="border border-accent text-accent px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent hover:text-white transition-all duration-300 flex-1 text-xs sm:text-sm"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Case Study
+            </motion.button>
+          )}
         </div>
       </div>
     </motion.div>
@@ -110,11 +118,15 @@ export default function ProjectsSection() {
       title: "E-Commerce Platform",
       description: "A modern full-stack e-commerce solution featuring seamless user authentication, secure payment processing, and an intuitive admin dashboard. Built with performance and scalability in mind.",
       technologies: ["React", "Next.js", "Stripe", "MongoDB", "Tailwind CSS"],
-      screenshotUrls: [
-        "/images/ecommerce-screenshot-1.png",
-        "/images/ecommerce-screenshot-2.png",
-        "/images/ecommerce-screenshot-3.png"
-      ],
+      imageUrl: "/images/ecommerce-preview.jpg",
+      caseStudy: {
+        overview: "A modern full-stack e-commerce solution featuring seamless user authentication, secure payment processing, and an intuitive admin dashboard. Built with performance and scalability in mind.",
+        screenshots: [
+          "/images/ecommerce-screenshot-1.png",
+          "/images/ecommerce-screenshot-2.png",
+          "/images/ecommerce-screenshot-3.png"
+        ]
+      },
       features: [
         "Secure payment processing with Stripe integration",
         "Real-time inventory management system",
@@ -128,10 +140,14 @@ export default function ProjectsSection() {
       title: "Portfolio Website",
       description: "A stunning, responsive portfolio website showcasing creative work and professional skills. Features smooth animations, SEO optimization, and exceptional user experience across all devices.",
       technologies: ["React", "Next.js", "Framer Motion", "TypeScript", "Tailwind CSS"],
-      screenshotUrls: [
-        "/images/portfolio-screenshot-1.png",
-        "/images/portfolio-screenshot-2.png"
-      ],
+      imageUrl: "/images/portfolio-preview.jpg",
+      caseStudy: {
+        overview: "A stunning, responsive portfolio website showcasing creative work and professional skills. Features smooth animations, SEO optimization, and exceptional user experience across all devices.",
+        screenshots: [
+          "/images/portfolio-screenshot-1.png",
+          "/images/portfolio-screenshot-2.png"
+        ]
+      },
       features: [
         "Smooth scroll animations and transitions",
         "Mobile-first responsive design",
@@ -145,11 +161,15 @@ export default function ProjectsSection() {
       title: "Task Management App",
       description: "A collaborative task management application with real-time updates, intuitive drag-and-drop functionality, and comprehensive team collaboration features. Includes advanced user roles and permissions.",
       technologies: ["React", "Node.js", "Socket.io", "PostgreSQL", "Express"],
-      screenshotUrls: [
-        "/images/taskapp-screenshot-1.png",
-        "/images/taskapp-screenshot-2.png",
-        "/images/taskapp-screenshot-3.png"
-      ],
+      imageUrl: "/images/taskapp-preview.jpg",
+      caseStudy: {
+        overview: "A collaborative task management application with real-time updates, intuitive drag-and-drop functionality, and comprehensive team collaboration features. Includes advanced user roles and permissions.",
+        screenshots: [
+          "/images/taskapp-screenshot-1.png",
+          "/images/taskapp-screenshot-2.png",
+          "/images/taskapp-screenshot-3.png"
+        ]
+      },
       features: [
         "Real-time collaboration with Socket.io",
         "Drag-and-drop task management",
@@ -163,27 +183,67 @@ export default function ProjectsSection() {
       title: "Census Promotion Video",
       description: "An engaging promotional video for the national census campaign, featuring dynamic motion graphics, compelling storytelling, and clear call-to-action elements to encourage participation.",
       technologies: ["DaVinci Resolve", "Adobe Premiere Pro", "After Effects", "Motion Graphics"],
-      screenshotUrls: [
-        "/images/census-video-1.png",
-        "/images/census-video-2.png"
-      ],
+      youtubeVideoId: "AAAA",
+      imageUrl: "/images/Video_processus.png",
       features: [
         "Dynamic motion graphics and animations",
         "Compelling storytelling narrative",
         "Clear call-to-action elements"
+      ],
+      liveDemoUrl: "https://youtu.be/uBkgVjMqDMk",
+    },
+    {
+      category: 'video-motion',
+      title: "Field Report",
+      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      imageUrl: "/images/atelier-rep.png",
+
+      features: [
+        "Smooth brand color transitions",
+        "Professional visual effects",
+        "Trust-building animation elements"
       ],
       liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
-      title: "Logo Animation for TikMoney",
+      title: "Data Visualization: Census Motion Graphics",
       description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
       technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
-      screenshotUrls: [
-        "/images/tikmoney-logo-1.png",
-        "/images/tikmoney-logo-2.png"
+      imageUrl: "/images/video-motion.png",
+
+      features: [
+        "Smooth brand color transitions",
+        "Professional visual effects",
+        "Trust-building animation elements"
       ],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'video-motion',
+      title: "The importance of the census",
+      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      imageUrl: "/images/motion-design1.png",
+
+      features: [
+        "Smooth brand color transitions",
+        "Professional visual effects",
+        "Trust-building animation elements"
+      ],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'video-motion',
+      title: "Are you registered?",
+      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Brand Animation"],
+      imageUrl: "/images/motion-design2.png",
+
       features: [
         "Smooth brand color transitions",
         "Professional visual effects",
@@ -194,14 +254,20 @@ export default function ProjectsSection() {
     },
     {
       category: 'graphics',
-      title: "UNFPA Infographics",
+      title: "Social Media Infographics",
       description: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+      caseStudy: {
+        overview: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+        screenshots: [
+          "/images/Journee femme.jpeg",
+          "/images/CAPI.jpg",
+          "/images/affiche.jpg",
+          "/images/ONU.jpg",
+          "/images/suivez-nous.jpeg",
+        ]
+      },
       technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
-      screenshotUrls: [
-        "/images/unfpa-infographic-1.png",
-        "/images/unfpa-infographic-2.png",
-        "/images/unfpa-infographic-3.png"
-      ],
+      imageUrl: "/images/Journee femme.jpeg",
       features: [
         "Complex data visualization",
         "Clear and readable typography",
@@ -212,12 +278,43 @@ export default function ProjectsSection() {
     },
     {
       category: 'graphics',
-      title: "Brand Identity Package",
+      title: "UNFPA Infographics",
+      description: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+      caseStudy: {
+        overview: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+        screenshots: [
+          "/images/15-59ans.png",
+          "/images/18 et +.png",
+          "/images/60 ans et plus_Plan de travail 1.png",
+          "/images/Femme en age de procreer.png",
+        ]
+      },
+      technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
+      imageUrl: "/images/Femme en age de procreer.png",
+      features: [
+        "Complex data visualization",
+        "Clear and readable typography",
+        "Professional icon design"
+      ],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'graphics',
+      title: "Roll-up design",
       description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
       technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      imageUrl: "/images/Mockup(2).jpg",
+      caseStudy: {  
+        overview: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+        screenshots: [
+          "/images/Mockup(1).jpg",
+          "/images/Mockup(2).jpg"
+        ]
+      },
       screenshotUrls: [
-        "/images/brand-identity-1.png",
-        "/images/brand-identity-2.png"
+        "/images/Mockup(1).jpg",
+        "/images/Mockup(2).jpg"
       ],
       features: [
         "Complete logo design system",
@@ -232,6 +329,7 @@ export default function ProjectsSection() {
       title: "TikMoney",
       description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
       technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      imageUrl: "/images/tikmoney.jpg",
       screenshotUrls: [
         "/images/tikmoney-brand-1.png",
         "/images/tikmoney-brand-2.png"
@@ -249,6 +347,43 @@ export default function ProjectsSection() {
       title: "Ikawa Burundian Coffee",
       description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
       technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      imageUrl: "/images/Ikawa.png",
+      screenshotUrls: [
+        "/images/ikawa-coffee-1.png",
+        "/images/ikawa-coffee-2.png"
+      ],
+      features: [
+        "Authentic coffee brand identity",
+        "Cultural design elements",
+        "Premium packaging design"
+      ],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'logo-design',
+      title: "Sebalink Africa",
+      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      imageUrl: "/images/sebalink.jpg",
+      screenshotUrls: [
+        "/images/ikawa-coffee-1.png",
+        "/images/ikawa-coffee-2.png"
+      ],
+      features: [
+        "Authentic coffee brand identity",
+        "Cultural design elements",
+        "Premium packaging design"
+      ],
+      liveDemoUrl: "#",
+      caseStudyUrl: "#",
+    },
+    {
+      category: 'logo-design',
+      title: "Crepe Happiness",
+      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      imageUrl: "/images/crepe.jpg",
       screenshotUrls: [
         "/images/ikawa-coffee-1.png",
         "/images/ikawa-coffee-2.png"
@@ -351,9 +486,11 @@ export default function ProjectsSection() {
                 title={project.title}
                 description={project.description}
                 technologies={project.technologies}
+                imageUrl={project.imageUrl}
                 liveDemoUrl={project.liveDemoUrl}
                 caseStudyUrl={project.caseStudyUrl}
                 category={project.category}
+                hasCaseStudy={Boolean((project as any).caseStudy)}
                 onCaseStudyClick={() => handleCaseStudyClick(project)}
               />
             ))}

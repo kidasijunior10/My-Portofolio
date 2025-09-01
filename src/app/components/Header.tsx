@@ -79,7 +79,7 @@ export default function Header() {
             <div className="hidden md:flex flex-shrink-0">
               <ScrollLink
                 to="contact"
-                spy={true}
+                spy={false}
                 smooth={true}
                 offset={-70}
                 duration={500}
