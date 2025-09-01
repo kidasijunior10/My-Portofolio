@@ -216,12 +216,12 @@ export default function HeroSection() {
  
 
       {/* Skills Marquee within Hero Section */}
-      <div className="absolute lg:bottom-27 xl:bottom-27 bottom-2 sm:bottom-4 left-0 right-0 z-10">
+      <div className="absolute lg:bottom-27 xl:bottom-27 bottom-23 sm:bottom-4 left-0 right-0 z-10">
         <SkillsMarquee />
       </div>
            {/* Scroll Indicator - Bottom Middle */}
            <motion.div
-        className="absolute bottom-5 sm:bottom-12 lg:bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+        className="absolute bottom-5 sm:bottom-12 md:bottom-35 lg:bottom-5  left-1/2 transform -translate-x-1/2 flex flex-col items-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}

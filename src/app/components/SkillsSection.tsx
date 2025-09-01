@@ -57,7 +57,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
         
         {/* Skill Name */}
         <div className="text-center">
-          <span className="text-primary font-inter font-medium text-xs sm:text-sm group-hover:text-accent transition-colors duration-300">
+          <span className="text-primary font-inter font-medium text-sm sm:text-base group-hover:text-accent transition-colors duration-300">
             {skill.name}
           </span>
         </div>

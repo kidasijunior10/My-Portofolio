@@ -1,0 +1,70 @@
+{
+  "Header": {
+    "home": "Accueil",
+    "services": "Services",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "about": "À Propos",
+    "contact": "Contactez-moi"
+  },
+  "Hero": {
+    "greeting": "Bonjour ! Je suis",
+    "name": "Joachim Kidasi",
+    "subtitle": "Ingénieur Logiciel & Designer Multimédia",
+    "viewWork": "Voir mes projets",
+    "contactMe": "Contactez-moi",
+    "scrollDown": "DÉFILER VERS LE BAS"
+  },
+  "Services": {
+    "title": "CE QUE JE PROPOSE",
+    "intro": "Pour faire simple : je construis des choses qui fonctionnent parfaitement, et je conçois des choses que les gens adorent. 👨‍💻❤️ Voici mes principaux services, prêts à transformer votre concept en réalité.",
+    "button": "Discuter d'un projet",
+    "card1Title": "Développement Web & Logiciel",
+    "card1Desc": "Je conçois et développe des solutions logicielles et applications web sur mesure, du concept au déploiement, en me concentrant sur des produits robustes, performants et intuitifs.",
+    "card2Title": "Design Graphique & Identité Visuelle",
+    "card2Desc": "Je crée des identités visuelles fortes et mémorables. Du design de logos aux chartes graphiques et supports marketing, je transforme vos idées en visuels percutants.",
+    "card3Title": "Motion Design & Animation Vidéo",
+    "card3Desc": "Je donne vie à votre marque grâce à l'animation. Je réalise des logos animés, des vidéos promotionnelles et des contenus dynamiques qui captent l'attention de votre audience."
+  },
+  "Projects": {
+    "title": "Projets Principaux",
+    "tab1": "Développement d'App",
+    "tab2": "Vidéo & Motion Design",
+    "tab3": "Graphisme & Infographies"
+  },
+  "Experience": {
+    "title": "Parcours Professionnel"
+  },
+  "Skills": {
+    "title": "Mes Outils & Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "design": "Outils de Design"
+  },
+  "About": {
+    "title": "À Propos de Moi",
+    "whoAmI": "Qui suis-je ?",
+    "bio": "Bonjour ! Je suis un Ingénieur Logiciel & Designer Multimédia de Bujumbura, avec quelques tours dans mon sac. 🃏 J'adore résoudre des énigmes complexes 🧩 et ensuite rendre la solution incroyablement belle. Mon but est de fusionner la magie technique 💻 avec une vision créative 🎨 pour créer des produits qui non seulement fonctionnent parfaitement, mais qui éblouissent. ✨ Après tout, pourquoi être si sérieux ? Quand je ne sors pas des lapins numériques d'un chapeau 🎩, vous me trouverez sur le terrain de football ⚽️ ou en train de dessiner mon prochain chef-d'œuvre.",
+    "findMe": "Retrouvez-moi en ligne",
+    "educationTitle": "Formation",
+    "degree": "Bachelor en Science & Technologie",
+    "major": "Génie Logiciel",
+    "university": "Bujumbura International University",
+    "stat1": "Années d'expérience",
+    "stat2": "Langues parlées",
+    "stat3": "Secteurs servis",
+    "stat4": "Double Expertise (Tech & Design)",
+    "cvButton": "Télécharger mon CV"
+  },
+  "Contact": {
+    "title": "Connectons-nous",
+    "intro": "Un projet ? 💼 Une idée folle ? 🤪 Juste envie de dire bonjour ? 👋 Ne soyez pas timide. Mon clavier est prêt ⌨️ et mes outils de design attendent 🎨. Écrivez-moi et voyons quel genre de projet génial nous pouvons commencer. 😈",
+    "nameLabel": "Votre nom :",
+    "emailLabel": "Votre adresse e-mail :",
+    "projectLabel": "Parlez-moi du projet :",
+    "submitButton": "Envoyer"
+  },
+  "Footer": {
+    "copyright": "Tous droits réservés."
+  }
+}

@@ -42,12 +42,12 @@ function ExperienceItem({ number, title, company, location, duration, isHighligh
       
       {/* Content */}
       <div className="flex-1 mb-4 sm:mb-0">
-        <h3 className={`text-lg sm:text-xl font-sora font-bold mb-2 ${
+        <h3 className={`text-xl sm:text-2xl font-sora font-bold mb-2 ${
           isHighlighted ? 'text-white' : 'text-primary'
         }`}>
           {title}
         </h3>
-        <p className={`text-sm sm:text-lg font-inter ${
+        <p className={`text-base sm:text-lg font-inter ${
           isHighlighted ? 'text-gray-200' : 'text-secondary'
         }`}>
           {company} - {location}
@@ -58,10 +58,10 @@ function ExperienceItem({ number, title, company, location, duration, isHighligh
       <div className={`w-full sm:w-auto text-left sm:text-right border-t-2 sm:border-t-0 sm:border-l-2 pt-4 sm:pt-0 sm:pl-6 ${
         isHighlighted ? 'border-white text-white' : 'border-gray-700 text-secondary'
       }`}>
-        <p className="font-inter font-medium text-xs sm:text-sm">
+        <p className="font-inter font-medium text-sm sm:text-base">
           JOB DURATION
         </p>
-        <p className="font-inter text-sm sm:text-base">
+        <p className="font-inter text-base sm:text-lg">
           {duration}
         </p>
       </div>

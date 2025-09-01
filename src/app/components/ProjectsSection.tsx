@@ -77,30 +77,32 @@ function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, 
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-          {liveDemoUrl && (
-            <motion.a
-              href={liveDemoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-accent text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent/90 transition-colors duration-300 flex-1 text-xs sm:text-sm text-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Live Demo
-            </motion.a>
-          )}
-          {hasCaseStudy && (
-            <motion.button
-              onClick={onCaseStudyClick}
-              className="border border-accent text-accent px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent hover:text-white transition-all duration-300 flex-1 text-xs sm:text-sm"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Case Study
-            </motion.button>
-          )}
-        </div>
+        {(liveDemoUrl || hasCaseStudy) && (
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+            {liveDemoUrl && (
+              <motion.a
+                href={liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent/90 transition-colors duration-300 flex-1 text-xs sm:text-sm text-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Live Demo
+              </motion.a>
+            )}
+            {hasCaseStudy && (
+              <motion.button
+                onClick={onCaseStudyClick}
+                className="border border-accent text-accent px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent hover:text-white transition-all duration-300 flex-1 text-xs sm:text-sm"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Case Study
+              </motion.button>
+            )}
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -201,8 +203,8 @@ export default function ProjectsSection() {
     },
     {
       category: 'video-motion',
-      title: "Census Promotion Video",
-      description: "An engaging promotional video for the national census campaign, featuring dynamic motion graphics, compelling storytelling, and clear call-to-action elements to encourage participation.",
+      title: "Census Process Explainer Video",
+      description: "A documentary-style video produced for the national census campaign to explain the census process to the public. The film uses a clear narrative voice-over combined with on-the-ground video footage and photography to build a transparent and easy-to-understand guide, building public trust in the project.",
       technologies: ["DaVinci Resolve", "Adobe Premiere Pro", "After Effects", "Animation"],
       youtubeVideoId: "AAAA",
       imageUrl: "/images/Video_processus.png",
@@ -215,8 +217,8 @@ export default function ProjectsSection() {
     },
     {
       category: 'video-motion',
-      title: "Field Report",
-      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      title: "RGPHAE Workshop Event Coverage",
+      description: "An event coverage video documenting the orientation workshop on the thematic analysis of census data. The report captures the key moments and objectives of the session, created to serve as a visual summary for the Bentral Census Bureau and its partners.",
       technologies: ["After Effects", "Adobe Premiere Pro", "DaVinci Resolve", "Motion Graphics", "Animation"],
       imageUrl: "/images/atelier-rep.png",
 
@@ -231,7 +233,7 @@ export default function ProjectsSection() {
     {
       category: 'video-motion',
       title: "Data Visualization: Census Motion Graphics",
-      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      description: "To bring the census data to life, I created a dynamic animation from a series of static infographics I had designed for the official data dissemination campaign. By utilizing the 3D camera in After Effects, I built an immersive journey that navigates through the still images, guiding the viewer through charts and key statistics as if moving through a 3D space.",
       technologies: ["After Effects", "Adobe Premiere Pro", "DaVinci Resolve", "Motion Graphics", "Animation"],
       imageUrl: "/images/video-motion.png",
 
@@ -245,8 +247,8 @@ export default function ProjectsSection() {
     },
     {
       category: 'video-motion',
-      title: "The importance of the census",
-      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      title: "The Importance of Census Planning",
+      description: "An informative motion graphics video explaining the critical role of planning in the success of a national census. The video was designed to educate stakeholders and the public on the logistical steps involved, building confidence in the process.",
       technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Animation"],
       imageUrl: "/images/motion-design1.png",
 
@@ -260,8 +262,8 @@ export default function ProjectsSection() {
     },
     {
       category: 'video-motion',
-      title: "Are you registered?",
-      description: "A sleek and modern logo animation for TikMoney financial services, incorporating smooth transitions, brand colors, and professional visual effects that convey trust and innovation.",
+      title: "Êtes-vous Recensé?",
+      description: "A direct and eye-catching motion graphics piece for a social media awareness campaign. The animation uses a strong call to action to encourage public participation and ensure everyone is counted in the national census.",
       technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Animation"],
       imageUrl: "/images/motion-design2.png",
 
@@ -275,10 +277,10 @@ export default function ProjectsSection() {
     },
     {
       category: 'graphics',
-      title: "Social Media Infographics",
-      description: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+      title: "Census Bureau Social Media Graphics",
+      description: "As part of the national census communication strategy, I designed a series of engaging infographics and visual content specifically for the Census Bureau's social media channels. The goal was to build public awareness, share key dates and information, and encourage community participation in this vital national project.",
       caseStudy: {
-        overview: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+        overview: "As part of the national census communication strategy, I designed a series of engaging infographics and visual content specifically for the Census Bureau's social media channels. The goal was to build public awareness, share key dates and information, and encourage community participation in this vital national project.",
         screenshots: [
           "/images/Journee femme.jpeg",
           "/images/CAPI.jpg",
@@ -289,20 +291,14 @@ export default function ProjectsSection() {
       },
       technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
       imageUrl: "/images/Journee femme.jpeg",
-      features: [
-        "Complex data visualization",
-        "Clear and readable typography",
-        "Professional icon design"
-      ],
-      liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
     {
       category: 'graphics',
-      title: "UNFPA Infographics",
-      description: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+      title: "Census Data Visualization",
+      description: "I was tasked with transforming complex demographic data from the census into clear, compelling, and easily digestible infographics for official reports and publications. The objective was to make the key findings of the census accessible and understandable to policymakers, journalists, and the general public.",
       caseStudy: {
-        overview: "A comprehensive set of infographics for UNFPA, presenting complex demographic data in visually appealing and easily digestible formats. Includes charts, icons, and clear typography.",
+        overview: "I was tasked with transforming complex demographic data from the census into clear, compelling, and easily digestible infographics for official reports and publications. The objective was to make the key findings of the census accessible and understandable to policymakers, journalists, and the general public.",
         screenshots: [
           "/images/15-59ans.png",
           "/images/18 et +.png",
@@ -312,44 +308,33 @@ export default function ProjectsSection() {
       },
       technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
       imageUrl: "/images/Femme en age de procreer.png",
-      features: [
-        "Complex data visualization",
-        "Clear and readable typography",
-        "Professional icon design"
-      ],
-      liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
     {
       category: 'graphics',
-      title: "Roll-up design",
-      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+      title: "Census Visibility Campaign Materials",
+      description: "I designed a wide range of official communication and visibility materials. My role was to establish a cohesive and professional visual identity across all physical brand collateral—including posters and roll-up banners—to effectively engage the public.",
       technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
       imageUrl: "/images/Mockup(2).jpg",
       caseStudy: {  
-        overview: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
+        overview: "As part of the national census communication team, I was responsible for designing a wide range of visibility and communication materials. This included creating key brand collateral such as the roll-up banners shown here, as well as posters, custom t-shirts, official badges, and other promotional items. The objective was to establish a cohesive and professional visual identity for the census campaign, ensuring brand consistency across all physical media to effectively engage the public.",
         screenshots: [
           "/images/Mockup(1).jpg",
-          "/images/Mockup(2).jpg"
+          "/images/Mockup(2).jpg",
+          "/images/teardrop.png",
         ]
       },
       screenshotUrls: [
         "/images/Mockup(1).jpg",
         "/images/Mockup(2).jpg"
       ],
-      features: [
-        "Complete logo design system",
-        "Comprehensive brand guidelines",
-        "Modern minimalist aesthetic"
-      ],
-      liveDemoUrl: "#",
       caseStudyUrl: "#",
     },
     {
       category: 'logo-design',
       title: "TikMoney",
-      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
-      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      description: "A modern and minimalist logo designed for TikMoney, a FinTech startup. The design focuses on conveying trust, security, and technological efficiency, creating a strong brand identity for their financial services.",
+      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Brand Design", "Logo Design"],
       imageUrl: "/images/tikmoney.jpg",
       screenshotUrls: [
         "/images/tikmoney-brand-1.png",
@@ -359,15 +344,13 @@ export default function ProjectsSection() {
         "Modern financial brand identity",
         "Scalable logo design",
         "Comprehensive brand guidelines"
-      ],
-      liveDemoUrl: "#",
-      caseStudyUrl: "#",
+      ]
     },
     {
       category: 'logo-design',
       title: "Ikawa Burundian Coffee",
-      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
-      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      description: "A premium and elegant logo concept for Ikawa Burundian Coffee. The design aims to capture the rich quality and heritage of Burundian coffee, creating a sophisticated brand mark suitable for a high-end coffee product.",
+      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Brand Design", "Logo Design"],
       imageUrl: "/images/Ikawa.png",
       screenshotUrls: [
         "/images/ikawa-coffee-1.png",
@@ -377,15 +360,13 @@ export default function ProjectsSection() {
         "Authentic coffee brand identity",
         "Cultural design elements",
         "Premium packaging design"
-      ],
-      liveDemoUrl: "#",
-      caseStudyUrl: "#",
+      ]
     },
     {
       category: 'logo-design',
       title: "Sebalink Africa",
-      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
-      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      description: "A corporate logo created for Sebalink Africa that visually represents connection and communication. The clean lines and solid typography establish a professional and reliable image for the brand across the continent.",
+      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Brand Design", "Logo Design"],
       imageUrl: "/images/sebalink.jpg",
       screenshotUrls: [
         "/images/ikawa-coffee-1.png",
@@ -395,15 +376,13 @@ export default function ProjectsSection() {
         "Authentic coffee brand identity",
         "Cultural design elements",
         "Premium packaging design"
-      ],
-      liveDemoUrl: "#",
-      caseStudyUrl: "#",
+      ]
     },
     {
       category: 'logo-design',
       title: "Crepe Happiness",
-      description: "Complete brand identity design including logo design, color palette, typography guidelines, and brand collateral. Created for a tech startup with modern, minimalist aesthetic.",
-      technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
+      description: "A playful and inviting logo developed for the food brand Crepe Happiness. The design uses warm colors and a friendly aesthetic to create an appetizing and memorable identity that appeals directly to customers.",
+      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Brand Design", "Logo Design"],
       imageUrl: "/images/crepe.jpg",
       screenshotUrls: [
         "/images/ikawa-coffee-1.png",
@@ -413,9 +392,7 @@ export default function ProjectsSection() {
         "Authentic coffee brand identity",
         "Cultural design elements",
         "Premium packaging design"
-      ],
-      liveDemoUrl: "#",
-      caseStudyUrl: "#",
+      ]
     },
     {
       category: 'website',

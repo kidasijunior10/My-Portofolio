@@ -1,0 +1,70 @@
+{
+  "Header": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact Me"
+  },
+  "Hero": {
+    "greeting": "Hello There! I'm",
+    "name": "Joachim Kidasi",
+    "subtitle": "Software Engineer & Multimedia Designer",
+    "viewWork": "View My Work",
+    "contactMe": "Contact Me",
+    "scrollDown": "SCROLL DOWN"
+  },
+  "Services": {
+    "title": "WHAT I'M OFFERING",
+    "intro": "I build things that work flawlessly, and I design things that people love. 👨‍💻❤️ Below are my main services, ready to turn your concept into a reality.",
+    "button": "Discuss a Project",
+    "card1Title": "Web & Software Development",
+    "card1Desc": "I design and develop custom software solutions and web applications, from concept to deployment, focusing on robust, high-performance, and intuitive products that meet your needs.",
+    "card2Title": "Graphic Design & Visual Identity",
+    "card2Desc": "I create strong and memorable visual identities. From logo design to branding guidelines and marketing materials, I transform your ideas into impactful visuals that tell your story.",
+    "card3Title": "Motion Design & Video Animation",
+    "card3Desc": "I bring your brand to life through animation. I produce animated logos, promotional videos, and dynamic content for social media that captures attention and engages your audience."
+  },
+  "Projects": {
+    "title": "Featured Projects",
+    "tab1": "App Development",
+    "tab2": "Video & Motion Design",
+    "tab3": "Graphics & Infographics"
+  },
+  "Experience": {
+    "title": "Career Journey"
+  },
+  "Skills": {
+    "title": "My Tech Stack & Tools",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "design": "Design Tools"
+  },
+  "About": {
+    "title": "About Me",
+    "whoAmI": "Who I Am",
+    "bio": "Hello there! I'm a Software Engineer & Multimedia Designer from Bujumbura, with a few tricks up my sleeve. 🃏 I thrive on solving complex puzzles 🧩 and then making the solution look damn good. My goal is to blend technical magic 💻 with creative vision 🎨 to build products that don't just work flawlessly—they dazzle. ✨ After all, why so serious? When I'm not pulling digital rabbits out of a hat 🎩, you'll find me on the football field ⚽️ or sketching my next masterpiece.",
+    "findMe": "Find Me Online",
+    "educationTitle": "Education",
+    "degree": "Bachelor of Science & Technology",
+    "major": "Software Engineering",
+    "university": "Bujumbura International University",
+    "stat1": "Years Experience",
+    "stat2": "Languages Spoken",
+    "stat3": "Industries Served",
+    "stat4": "Expertise (Tech & Design)",
+    "cvButton": "Download My CV"
+  },
+  "Contact": {
+    "title": "Let's Connect",
+    "intro": "Have a project? 💼 A crazy idea? 🤪 Just want to say hello? 👋 Don't be shy. My keyboard is ready ⌨️ and my design tools are waiting 🎨. Drop me a line and let's see what kind of trouble we can get into. 😈",
+    "nameLabel": "Your name:",
+    "emailLabel": "Your email address:",
+    "projectLabel": "Tell about the project:",
+    "submitButton": "Send"
+  },
+  "Footer": {
+    "copyright": "All Rights Reserved."
+  }
+}
