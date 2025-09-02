@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import Header from "./components/Header";
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Header />
           {children}
         </I18nProvider>
+        <Analytics />
       </body>
     </html>
   );
