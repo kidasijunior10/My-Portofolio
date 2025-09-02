@@ -19,7 +19,7 @@ export default function ServicesSection() {
     },
     {
       title: "Motion Design & Video Animation",
-      description: "Static is boring 🥱. I'm here to make things move 💃. I create the slick animations and engaging videos 🎬 that give your brand a dynamic personality and make people stop scrolling.",
+              description: "Static is boring 🥱. I&apos;m here to make things move 💃. I create the slick animations and engaging videos 🎬 that give your brand a dynamic personality and make people stop scrolling.",
       icon: "🎬",
       isHighlighted: false
     }

@@ -21,7 +21,6 @@ interface Project {
   };
   features?: string[];
   liveDemoUrl?: string;
-  caseStudyUrl?: string;
   youtubeVideoId?: string;
   screenshotUrls?: string[];
 }
@@ -163,7 +162,6 @@ export default function ProjectsSection() {
         "Robust Reporting System",
       ],
       liveDemoUrl: "#",
-      caseStudyUrl: "#",
     },
     {
       category: 'app-dev',
@@ -195,7 +193,6 @@ export default function ProjectsSection() {
         "Ongoing Maintenance & Support",
       ],
       liveDemoUrl: "#",
-      caseStudyUrl: "#",
     },
     {
       category: 'app-dev',
@@ -219,7 +216,6 @@ export default function ProjectsSection() {
         "Responsive Design"
       ],
       liveDemoUrl: "https://menu.zanzi.bi/",
-      caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
@@ -247,7 +243,6 @@ export default function ProjectsSection() {
         "Trust-building animation elements"
       ],
       liveDemoUrl: "https://youtu.be/4DiCgtsifEc",
-      caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
@@ -261,7 +256,6 @@ export default function ProjectsSection() {
         "Trust-building animation elements"
       ],
       liveDemoUrl: "https://youtu.be/zoFThRUqVZQ",
-      caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
@@ -275,7 +269,6 @@ export default function ProjectsSection() {
         "Trust-building animation elements"
       ],
       liveDemoUrl: "https://youtu.be/t7OwS2oe9zE",
-      caseStudyUrl: "#",
     },
     {
       category: 'video-motion',
@@ -289,7 +282,6 @@ export default function ProjectsSection() {
         "Trust-building animation elements"
       ],
       liveDemoUrl: "https://youtu.be/mwBNMBNg9gs",
-      caseStudyUrl: "#",
     },
     {
       category: 'graphics',
@@ -310,7 +302,6 @@ export default function ProjectsSection() {
       },
       technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
       imageUrl: "/images/Journee femme.jpeg",
-      caseStudyUrl: "#",
     },
     {
       category: 'graphics',
@@ -330,7 +321,6 @@ export default function ProjectsSection() {
       },
       technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
       imageUrl: "/images/Femme en age de procreer.png",
-      caseStudyUrl: "#",
     },
     {
       category: 'graphics',
@@ -353,7 +343,6 @@ export default function ProjectsSection() {
         "/images/Mockup(1).jpg",
         "/images/Mockup(2).jpg"
       ],
-      caseStudyUrl: "#",
     },
     {
       category: 'logo-design',
@@ -435,7 +424,6 @@ export default function ProjectsSection() {
         "Premium packaging design"
       ],
       liveDemoUrl: "https://hfm.bi/",
-      caseStudyUrl: "#",
     },
     {
       category: 'website',
@@ -453,7 +441,6 @@ export default function ProjectsSection() {
         "Premium packaging design"
       ],
       liveDemoUrl: "https://bcr.bi/",
-      caseStudyUrl: "#",
     },
     {
       category: 'website',
@@ -471,7 +458,6 @@ export default function ProjectsSection() {
         "Premium packaging design"
       ],
       liveDemoUrl: "https://akilixo.com/",
-      caseStudyUrl: "#",
     },
   ];
 
