@@ -102,24 +102,36 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 ease: "easeOut",
                 delay: 0.8
               }}
             >
               <motion.button 
-                className="bg-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-inter font-semibold text-base sm:text-lg hover:bg-accent/90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:shadow-accent/25"
+                className="bg-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-inter font-semibold text-base sm:text-lg hover:bg-accent/90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:shadow-accent/25 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const element = document.getElementById('projects');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
               >
                 View My Work
                 <span className="text-white">→</span>
               </motion.button>
               <motion.button 
-                className="bg-transparent text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-inter font-semibold text-base sm:text-lg border-2 border-accent hover:bg-accent/10 transition-all duration-300"
+                className="bg-transparent text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-inter font-semibold text-base sm:text-lg border-2 border-accent hover:bg-accent/10 transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
               >
                 Contact Me
               </motion.button>
@@ -143,7 +155,7 @@ export default function HeroSection() {
                 }}
               />
               
-                            {/* Portrait image - absolute positioned above circle */}
+              {/* Portrait image - absolute positioned above circle */}
               <motion.div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-88 sm:h-88 md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] z-10"
                 initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
