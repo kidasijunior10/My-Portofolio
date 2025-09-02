@@ -56,10 +56,10 @@ export default function AboutMe() {
                 
                 <div className="space-y-6">
                   <p className="text-secondary font-inter leading-relaxed text-base sm:text-lg lg:text-lg">
-                  I'm a Software Engineer & Multimedia Designer from Bujumbura, with a few tricks up my sleeve. 🃏 I thrive on solving the complex puzzles 🧩 and then making the solution look damn good.
+                  I&apos;m a Software Engineer & Multimedia Designer from Bujumbura, with a few tricks up my sleeve. 🃏 I thrive on solving the complex puzzles 🧩 and then making the solution look damn good.
                   </p>
                   <p className="text-secondary font-inter leading-relaxed text-base sm:text-lg lg:text-lg">
-                  My goal is to blend technical magic 💻 with creative vision 🎨 to build products that don't just work flawlessly—they dazzle. ✨ After all, why so serious? When I'm not pulling digital rabbits out of a hat 🎩, you'll find me on the football field ⚽️ or sketching my next masterpiece.
+                  My goal is to blend technical magic 💻 with creative vision 🎨 to build products that don&apos;t just work flawlessly—they dazzle. ✨ After all, why so serious? When I&apos;m not pulling digital rabbits out of a hat 🎩, you&apos;ll find me on the football field ⚽️ or sketching my next masterpiece.
                   </p>
                   
                   {/* Download CV Button */}

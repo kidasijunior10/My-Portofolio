@@ -73,7 +73,7 @@ export default function ExperienceSection() {
   const experiences = [
     {
       number: 1,
-      title: "Consultant Graphic Designer",
+      title: "Infographic & Multimedia Designer",
       company: " United Nations Population Fund",
       location: "Bujumbura, Burundi",
       duration: "1+ Year (Since July 2024)",

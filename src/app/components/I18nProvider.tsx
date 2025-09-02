@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import '../i18n';
 
 interface I18nProviderProps {
   children: React.ReactNode;
@@ -9,7 +8,8 @@ interface I18nProviderProps {
 
 export default function I18nProvider({ children }: I18nProviderProps) {
   useEffect(() => {
-    // i18n is initialized in the imported file
+    // Only import and initialize i18n on the client side
+    import('../i18n');
   }, []);
 
   return <>{children}</>;

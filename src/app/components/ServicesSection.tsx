@@ -45,7 +45,7 @@ export default function ServicesSection() {
                 MY SERVICES?
               </h3>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sora font-bold text-primary mb-4 sm:mb-6">
-                WHAT I'M OFFERING
+                WHAT I&apos;M OFFERING
               </h2>
             </motion.div>
           </div>

@@ -1,8 +1,30 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import { useState } from 'react';
 import CaseStudyModal from './CaseStudyModal';
+
+// Project interface
+interface Project {
+  category: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  imageUrl?: string;
+  caseStudy?: {
+    overview: string;
+    screenshots: string[];
+    challenge: string;
+    solution: string;
+    outcome: string;
+  };
+  features?: string[];
+  liveDemoUrl?: string;
+  caseStudyUrl?: string;
+  youtubeVideoId?: string;
+  screenshotUrls?: string[];
+}
 
 // ProjectCard component
 interface ProjectCardProps {
@@ -10,15 +32,13 @@ interface ProjectCardProps {
   description: string;
   technologies: string[];
   imageUrl?: string;
-  liveDemoUrl?: string;
-  caseStudyUrl?: string;
   index: number;
-  category: string;
   hasCaseStudy?: boolean;
+  liveDemoUrl?: string;
   onCaseStudyClick: () => void;
 }
 
-function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, caseStudyUrl, index, category, hasCaseStudy, onCaseStudyClick }: ProjectCardProps) {
+function ProjectCard({ title, description, technologies, imageUrl, index, hasCaseStudy, liveDemoUrl, onCaseStudyClick }: ProjectCardProps) {
   return (
     <motion.div
       className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden hover:translate-y-[-5px] hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 group"
@@ -35,9 +55,11 @@ function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, 
       {/* Project Image */}
       <div className="h-48 sm:h-56 lg:h-64 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
         {imageUrl ? (
-          <img 
+          <Image 
             src={imageUrl} 
             alt={title} 
+            width={500}
+            height={300}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
         ) : (
@@ -112,9 +134,9 @@ function ProjectCard({ title, description, technologies, imageUrl, liveDemoUrl, 
 export default function ProjectsSection() {
   const [activeTab, setActiveTab] = useState('app-dev');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projects = [
+  const projects: Project[] = [
     {
       category: 'app-dev',
       title: "Logistics Management System",
@@ -139,7 +161,6 @@ export default function ProjectsSection() {
         "Comprehensive Shipment Tracking & Management",
         "Modern User Experience (UX/UI)",
         "Robust Reporting System",
-
       ],
       liveDemoUrl: "#",
       caseStudyUrl: "#",
@@ -160,7 +181,6 @@ export default function ProjectsSection() {
           "/images/Ebms5.png",
           "/images/Ebms6.png",
           "/images/Ebms7.png",
-        
         ],
         challenge: "As part of a national digitalization effort, the Burundi Revenue Authority (OBR) required all businesses to report their sales in real-time. My client, i-Solutions, needed to provide its diverse enterprise customers with a reliable and seamless way to comply with this new fiscal regulation without disrupting their daily operations.",
         solution: "I developed and maintained the client-side software that integrates directly with various business systems. The solution connects their existing Point of Sale (POS) and invoicing software to the OBR's central EBMS platform. I focused on creating a robust and adaptable system that could be deployed across different sectors, from retail shops to hotels, ensuring secure and automated data synchronization.",
@@ -221,7 +241,6 @@ export default function ProjectsSection() {
       description: "An event coverage video documenting the orientation workshop on the thematic analysis of census data. The report captures the key moments and objectives of the session, created to serve as a visual summary for the Bentral Census Bureau and its partners.",
       technologies: ["After Effects", "Adobe Premiere Pro", "DaVinci Resolve", "Motion Graphics", "Animation"],
       imageUrl: "/images/atelier-rep.png",
-
       features: [
         "Smooth brand color transitions",
         "Professional visual effects",
@@ -236,7 +255,6 @@ export default function ProjectsSection() {
       description: "To bring the census data to life, I created a dynamic animation from a series of static infographics I had designed for the official data dissemination campaign. By utilizing the 3D camera in After Effects, I built an immersive journey that navigates through the still images, guiding the viewer through charts and key statistics as if moving through a 3D space.",
       technologies: ["After Effects", "Adobe Premiere Pro", "DaVinci Resolve", "Motion Graphics", "Animation"],
       imageUrl: "/images/video-motion.png",
-
       features: [
         "Smooth brand color transitions",
         "Professional visual effects",
@@ -251,7 +269,6 @@ export default function ProjectsSection() {
       description: "An informative motion graphics video explaining the critical role of planning in the success of a national census. The video was designed to educate stakeholders and the public on the logistical steps involved, building confidence in the process.",
       technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Animation"],
       imageUrl: "/images/motion-design1.png",
-
       features: [
         "Smooth brand color transitions",
         "Professional visual effects",
@@ -266,7 +283,6 @@ export default function ProjectsSection() {
       description: "A direct and eye-catching motion graphics piece for a social media awareness campaign. The animation uses a strong call to action to encourage public participation and ensure everyone is counted in the national census.",
       technologies: ["After Effects", "Adobe Premiere Pro", "Motion Graphics", "Animation"],
       imageUrl: "/images/motion-design2.png",
-
       features: [
         "Smooth brand color transitions",
         "Professional visual effects",
@@ -287,7 +303,10 @@ export default function ProjectsSection() {
           "/images/affiche.jpg",
           "/images/ONU.jpg",
           "/images/suivez-nous.jpeg",
-        ]
+        ],
+        challenge: "The Census Bureau needed to communicate complex census information to the public in an engaging and accessible way through social media channels.",
+        solution: "I designed a series of visually appealing infographics and social media graphics that simplified complex data and made it easy for the public to understand and engage with.",
+        outcome: "The social media campaign successfully increased public awareness and participation in the national census project."
       },
       technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
       imageUrl: "/images/Journee femme.jpeg",
@@ -304,7 +323,10 @@ export default function ProjectsSection() {
           "/images/18 et +.png",
           "/images/60 ans et plus_Plan de travail 1.png",
           "/images/Femme en age de procreer.png",
-        ]
+        ],
+        challenge: "Complex demographic data needed to be transformed into clear, compelling infographics that were accessible to policymakers, journalists, and the general public.",
+        solution: "I created visually appealing infographics that simplified complex data while maintaining accuracy and making the information easy to understand.",
+        outcome: "The infographics successfully made census data accessible and understandable to all target audiences."
       },
       technologies: ["Adobe Illustrator", "Photoshop", "Data Visualization", "Infographic Design"],
       imageUrl: "/images/Femme en age de procreer.png",
@@ -322,7 +344,10 @@ export default function ProjectsSection() {
           "/images/Mockup(1).jpg",
           "/images/Mockup(2).jpg",
           "/images/teardrop.png",
-        ]
+        ],
+        challenge: "The census campaign needed a cohesive and professional visual identity across all physical brand collateral to effectively engage the public.",
+        solution: "I designed a comprehensive range of visibility materials including posters, roll-up banners, custom t-shirts, and official badges with consistent branding.",
+        outcome: "The campaign materials successfully established a professional visual identity that increased public engagement and participation in the census."
       },
       screenshotUrls: [
         "/images/Mockup(1).jpg",
@@ -461,7 +486,7 @@ export default function ProjectsSection() {
     { id: 'logo-design', label: 'Logo Design' },
   ];
 
-  const handleCaseStudyClick = (project: any) => {
+  const handleCaseStudyClick = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -540,10 +565,8 @@ export default function ProjectsSection() {
                 description={project.description}
                 technologies={project.technologies}
                 imageUrl={project.imageUrl}
+                hasCaseStudy={Boolean(project.caseStudy)}
                 liveDemoUrl={project.liveDemoUrl}
-                caseStudyUrl={project.caseStudyUrl}
-                category={project.category}
-                hasCaseStudy={Boolean((project as any).caseStudy)}
                 onCaseStudyClick={() => handleCaseStudyClick(project)}
               />
             ))}

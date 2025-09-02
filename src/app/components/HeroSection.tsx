@@ -79,7 +79,7 @@ export default function HeroSection() {
                 delay: 0.4
               }}
             >
-              Hello There! I'm{' '}
+              Hello There! I&apos;m{' '}
               <span className="text-accent">Joachim Kidasi</span>
             </motion.h1>
             

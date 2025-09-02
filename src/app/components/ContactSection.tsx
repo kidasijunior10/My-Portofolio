@@ -23,11 +23,11 @@ export default function ContactSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold text-primary mb-4 sm:mb-6">
-              Let's Connect
+              Let&apos;s Connect
               <span className="text-accent ml-2">→</span>
             </h2>
             <p className="text-secondary font-inter text-base sm:text-lg lg:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg">
-            Have a project? 💼 A crazy idea? 🤪 Just want to say hello? 👋 Don't be shy. My keyboard is ready ⌨️ and my design tools are waiting 🎨. Drop me a line and let's see what kind of trouble we can get into. 😈
+            Have a project? 💼 A crazy idea? 🤪 Just want to say hello? 👋 Don&apos;t be shy. My keyboard is ready ⌨️ and my design tools are waiting 🎨. Drop me a line and let&apos;s see what kind of trouble we can get into. 😈
             </p>
             
             {/* Open for Projects Badge */}
