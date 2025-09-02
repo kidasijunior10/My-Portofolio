@@ -13,7 +13,6 @@ Welcome to my digital playground! This isn't just another boring portfolio - it'
 - **Tailwind CSS** - For when you want to style faster than your coffee cools down
 - **Framer Motion** - Smooth animations that make your eyes happy
 - **TypeScript** - Because we're not savages who write plain JavaScript
-- **i18n** - Bilingual magic (English & French) because why speak one language when you can confuse people in two?
 
 ### 🎯 **The Sections That Tell My Story**
 - **Hero Section** - Where I introduce myself with the confidence of someone who just finished their third coffee
@@ -25,10 +24,6 @@ Welcome to my digital playground! This isn't just another boring portfolio - it'
 - **Contact** - How to reach me (I promise I don't bite!)
 
 ## 🚀 Features That Make This Portfolio Special
-
-### 🌍 **Bilingual Awesomeness**
-- Switch between English and French with a click
-- Because "Hello World" sounds better as "Bonjour le Monde" 🇫🇷
 
 ### 🎬 **Smooth Animations**
 - Everything moves like it's been drinking Red Bull
@@ -80,10 +75,9 @@ I believe in **"Less is More"** but also **"More is More"** when it comes to use
 ## 🌟 What Makes This Portfolio Different
 
 1. **It's Actually Fun** - No corporate stiffness here!
-2. **It's Bilingual** - Because the world is bigger than one language
-3. **It's Interactive** - Not just a static page that sits there looking pretty
-4. **It's Fast** - Optimized to load faster than you can say "portfolio"
-5. **It's Responsive** - Looks great on everything from a phone to a 4K monitor
+2. **It's Interactive** - Not just a static page that sits there looking pretty
+3. **It's Fast** - Optimized to load faster than you can say "portfolio"
+4. **It's Responsive** - Looks great on everything from a phone to a 4K monitor
 
 ## 🎯 The Projects You'll See
 
@@ -107,11 +101,11 @@ This project is open source because sharing is caring! Feel free to use it as in
 
 - **Coffee** - For keeping me awake during late-night coding sessions
 - **Stack Overflow** - For answering questions I didn't know I had
-- **My cat** - For walking on my keyboard and "helping" with debugging
+- **Football** - For the inspiration and passion that drives my creativity
 - **The Next.js team** - For making this framework so darn good
 
 ---
 
-*Built with ❤️, ☕, and probably too much enthusiasm by Linga Joachim Kidasi*
+*Built with ❤️, ☕, and football passion by Linga Joachim Kidasi*
 
-**P.S.**: If you found any typos in this README, they were probably added by my cat. She's not very good at typing, but she's cute, so I let her help. 🐱
+**P.S.**: If you found any typos in this README, they were probably added during a football match break. The beautiful game is distracting! ⚽🔥
