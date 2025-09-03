@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: "Software Engineer & Multimedia Designer Portfolio",
   },
   verification: {
-    google: "google4c589b9fcea33b0c.html", 
+    google: "EUVv-6UXYAncWRsVnur3t-fCPcwYjeUpg6pZ-VYnE_M", 
   },
 };
 
@@ -69,7 +69,7 @@ export default function RootLayout({
               "name": "Linga Joachim Kidasi",
               "jobTitle": "Software Engineer & Multimedia Designer",
               "description": "Professional software engineer and multimedia designer specializing in web development and creative design solutions.",
-              "url": "https://your-domain.vercel.app",
+              "url": "https://kidasijunior.vercel.app",
               "sameAs": [
                 "https://linkedin.com/in/your-profile",
                 "https://github.com/your-username"
