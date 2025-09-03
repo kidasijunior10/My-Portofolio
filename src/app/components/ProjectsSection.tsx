@@ -100,18 +100,19 @@ function ProjectCard({ title, description, technologies, imageUrl, index, hasCas
         {/* Action Buttons */}
         {(liveDemoUrl || hasCaseStudy) && (
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-            {liveDemoUrl && (
-              <motion.a
-                href={liveDemoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-accent text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold hover:bg-accent/90 transition-colors duration-300 flex-1 text-xs sm:text-sm text-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Live Demo
-              </motion.a>
-            )}
+            <motion.button
+              disabled={!liveDemoUrl}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-inter font-semibold transition-all duration-300 flex-1 text-xs sm:text-sm text-center ${
+                liveDemoUrl
+                  ? 'bg-accent text-white hover:bg-accent/90 cursor-pointer'
+                  : 'bg-gray-600 text-gray-400 cursor-not-allowed opacity-50'
+              }`}
+              whileHover={liveDemoUrl ? { scale: 1.05 } : {}}
+              whileTap={liveDemoUrl ? { scale: 0.95 } : {}}
+              onClick={liveDemoUrl ? () => window.open(liveDemoUrl, '_blank', 'noopener,noreferrer') : undefined}
+            >
+              Live Demo
+            </motion.button>
             {hasCaseStudy && (
               <motion.button
                 onClick={onCaseStudyClick}
@@ -161,7 +162,7 @@ export default function ProjectsSection() {
         "Modern User Experience (UX/UI)",
         "Robust Reporting System",
       ],
-      liveDemoUrl: "#",
+     
     },
     {
       category: 'app-dev',
@@ -192,7 +193,7 @@ export default function ProjectsSection() {
         "Secure Data Transmission",
         "Ongoing Maintenance & Support",
       ],
-      liveDemoUrl: "#",
+      
     },
     {
       category: 'app-dev',
@@ -327,12 +328,13 @@ export default function ProjectsSection() {
       title: "Census Visibility Campaign Materials",
       description: "I designed a wide range of official communication and visibility materials. My role was to establish a cohesive and professional visual identity across all physical brand collateral—including posters and roll-up banners—to effectively engage the public.",
       technologies: ["Adobe Illustrator", "Photoshop", "Brand Design", "Logo Design"],
-      imageUrl: "/images/Mockup(2).jpg",
+      imageUrl: "/images/Mockup_roll_2.png",
       caseStudy: {  
         overview: "As part of the national census communication team, I was responsible for designing a wide range of visibility and communication materials. This included creating key brand collateral such as the roll-up banners shown here, as well as posters, custom t-shirts, official badges, and other promotional items. The objective was to establish a cohesive and professional visual identity for the census campaign, ensuring brand consistency across all physical media to effectively engage the public.",
         screenshots: [
+          "/images/Mockup_roll_2.png",
+          "/images/Mockup_1.png",
           "/images/Mockup(1).jpg",
-          "/images/Mockup(2).jpg",
           "/images/teardrop.png",
         ],
         challenge: "The census campaign needed a cohesive and professional visual identity across all physical brand collateral to effectively engage the public.",
