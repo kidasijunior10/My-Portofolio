@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.vercel.app",
+    url: "https://kidasijunior.vercel.app",
     title: "Linga Joachim Kidasi - Portfolio",
     description: "Software Engineer & Multimedia Designer Portfolio",
     siteName: "Linga Joachim Kidasi Portfolio",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: "Software Engineer & Multimedia Designer Portfolio",
   },
   verification: {
-    google: "your-google-verification-code", // Add this when you get it
+    google: "google4c589b9fcea33b0c.html", 
   },
 };
 
